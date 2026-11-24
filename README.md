@@ -1,0 +1,6 @@
+### README / Reproducibility (English)
+This notebook compares five PySpark MLlib classifiers on UCI Adult. Open it in the supplied Jupyter environment using the original Spark kernel and run cells from top to bottom. It requires the existing Spark installation, Java, findspark, NumPy, Pandas, Matplotlib, Seaborn. Spark UI requests port 37016.
+
+The notebook automatically downloads the official UCI ZIP and extracts `adult.data` and `adult.test` into the local `datos_adult` directory. Internet access to UCI and write permission in the working directory are required. File contents are read on the driver and passed to Spark as distributed text, so executor access to the local directory is unnecessary.
+
+Use a fresh kernel for a full rerun. The original train/test split is preserved. Learned preprocessing is fitted on training data only. Positive-class precision, recall and F1 refer to income >50K. The saved execution outputs and figures are preserved. Comments and conclusions describe those results; the notebook was not rerun during annotation. The decision tree AUC uses raw leaf class counts and should be reassessed using positive-class probabilities before comparing probability ranking performance. This embedded README covers the optional English documentation item; no repository publication is claimed.
